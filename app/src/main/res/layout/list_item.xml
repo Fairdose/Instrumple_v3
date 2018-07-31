@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/item_container"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@android:color/holo_green_dark"
-    android:orientation="horizontal"
-    android:paddingBottom="15dp"
-    android:paddingLeft="5dp"
-    android:paddingRight="5dp"
-    android:paddingTop="15dp">
+    android:layout_height="@dimen/list_item_height"
+    android:background="#5e5e5e"
+    android:minHeight="@dimen/list_item_height"
+    android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/item_picture"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginLeft="15dp"
-        android:layout_weight="0"
-        app:srcCompat="@android:color/darker_gray" />
+        android:id="@+id/image"
+        style="@style/home_item_style_img"
+        android:layout_width="@dimen/list_item_height"
+        android:layout_height="@dimen/list_item_height" />
 
-    <TextView
-        android:id="@+id/item_text"
+    <LinearLayout
+        android:id="@+id/item_container"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:layout_marginLeft="5dp"
-        android:layout_weight="1"
-        android:gravity="left"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:text="TextView" />
+        android:layout_height="@dimen/list_item_height"
+        android:orientation="vertical"
+        android:paddingLeft="16dp">
 
-    <ImageView
-        android:id="@+id/item_play"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="0"
-        app:srcCompat="@android:drawable/ic_media_play" />
+        <TextView
+            android:id="@+id/item_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="@string/text_placeholder"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_media_play" />
+
+    </LinearLayout>
 
 </LinearLayout>

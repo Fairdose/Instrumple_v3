@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Instrumple</string>
+    <string name="text_placeholder">Play me</string>
+    <string name="keyboards_description">keyboards_image</string>
+    <string name="strings_description">strings_image</string>
+    <string name="percussion_description">percussion_image</string>
+    <string name="brass_description">brass_image</string>
+    <string name="woodwinds_description">woodwinds_image</string>
+    <string name="home_introduction_text">This is an example text</string>
+    <string name="home_background">home_background</string>
 </resources>
