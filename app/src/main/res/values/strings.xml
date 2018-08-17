@@ -6,6 +6,25 @@
     <string name="percussion_description">percussion_image</string>
     <string name="brass_description">brass_image</string>
     <string name="woodwinds_description">woodwinds_image</string>
-    <string name="home_introduction_text">This is an example text</string>
+    <string name="home_introduction_text">This app aims to introduce instruments from all around the world with sample sounds. </string>
     <string name="home_background">home_background</string>
+    <string name="introduction_img">introduction_text</string>
+    <string name="keyboard_text">Keyboards</string>
+    <string name="strings_text">Strings</string>
+    <string name="percussion_text">Percussion</string>
+
+    <!-- String values for items -->
+    <!-- Keyboards -->
+    <string name="keyboard_1">Piano</string>
+    <string name="keyboard_2">Harpsichord</string>
+    <string name="keyboard_3">Organ</string>
+    <!-- Strings -->
+    <string name="strings_1">Violin</string>
+    <string name="strings_2">Guitar</string>
+    <string name="strings_3">Harp</string>
+    <!-- Percussion -->
+    <string name="percussion_1">Bongo</string>
+    <string name="percussion_2">Snare</string>
+    <string name="percussion_3">Cymbals</string>
+
 </resources>

@@ -9,7 +9,13 @@
 
     <FrameLayout style="@style/introduction_layout">
 
-        <ImageView style="@style/introduction_img" />
+        <ImageView
+            android:src="@drawable/home_img"
+            android:alpha="0.3"
+            android:contentDescription="@string/introduction_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
 
         <TextView
             android:text="@string/home_introduction_text"
@@ -34,13 +40,13 @@
 
                 <ImageView
                     android:id="@+id/image_keyboard"
-                    app:srcCompat="@mipmap/ic_launcher_round"
+                    app:srcCompat="@drawable/keyboard"
                     style="@style/home_item_style_img"
                     android:contentDescription="@string/keyboards_description"/>
 
                 <TextView
                     android:id="@+id/keyboard_textView"
-                    android:text="@string/text_placeholder"
+                    android:text="@string/keyboard_text"
                     style="@style/home_item_style_text" />
 
             </LinearLayout>
@@ -51,13 +57,13 @@
 
                 <ImageView
                     android:id="@+id/image_strings"
-                    app:srcCompat="@mipmap/ic_launcher_round"
+                    app:srcCompat="@drawable/violin"
                     style="@style/home_item_style_img"
                     android:contentDescription="@string/strings_description"/>
 
                 <TextView
                     android:id="@+id/strings_textView"
-                    android:text="@string/text_placeholder"
+                    android:text="@string/strings_text"
                     style="@style/home_item_style_text" />
 
             </LinearLayout>
@@ -68,47 +74,13 @@
 
                 <ImageView
                     android:id="@+id/image_percussion"
-                    app:srcCompat="@mipmap/ic_launcher_round"
+                    app:srcCompat="@drawable/percussion"
                     style="@style/home_item_style_img"
                     android:contentDescription="@string/percussion_description"/>
 
                 <TextView
                     android:id="@+id/percussion_textView"
-                    android:text="@string/text_placeholder"
-                    style="@style/home_item_style_text" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/brass"
-                style="@style/home_item_style_layout">
-
-                <ImageView
-                    android:id="@+id/image_brass"
-                    app:srcCompat="@mipmap/ic_launcher_round"
-                    style="@style/home_item_style_img"
-                    android:contentDescription="@string/brass_description"/>
-
-                <TextView
-                    android:id="@+id/brass_textView"
-                    android:text="@string/text_placeholder"
-                    style="@style/home_item_style_text" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/woodwinds"
-                style="@style/home_item_style_layout">
-
-                <ImageView
-                    android:id="@+id/image_woodwinds"
-                    app:srcCompat="@mipmap/ic_launcher_round"
-                    style="@style/home_item_style_img"
-                    android:contentDescription="@string/woodwinds_description"/>
-
-                <TextView
-                    android:id="@+id/woodwinds_textView"
-                    android:text="@string/text_placeholder"
+                    android:text="@string/percussion_text"
                     style="@style/home_item_style_text" />
 
             </LinearLayout>

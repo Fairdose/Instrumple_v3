@@ -1,43 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/list_item_height"
-    android:background="#5e5e5e"
-    android:minHeight="@dimen/list_item_height"
-    android:orientation="vertical">
+    style="@style/list_item_wrapper"
+    android:background="@android:color/transparent">
 
-    <ImageView
-        android:id="@+id/image"
-        style="@style/home_item_style_img"
-        android:layout_width="@dimen/list_item_height"
-        android:layout_height="@dimen/list_item_height" />
-
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/item_container"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/list_item_height"
-        android:orientation="vertical"
-        android:paddingLeft="16dp">
+        style="@style/list_item_clickable_wrapper">
+
+        <ImageView
+            android:id="@+id/image"
+            android:src="@drawable/violin"
+            style="@style/list_item_img" />
 
         <TextView
             android:id="@+id/item_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="left|center_vertical"
-            android:text="@string/text_placeholder"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            style="@style/list_item_text"
+            android:text="@string/text_placeholder" />
 
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            style="@style/list_item_btn"
             android:src="@android:drawable/ic_media_play" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

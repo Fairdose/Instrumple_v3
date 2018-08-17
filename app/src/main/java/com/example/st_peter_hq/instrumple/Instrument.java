@@ -20,7 +20,7 @@ public class Instrument {
     
     //Create Instrument object
     
-    public Instrument(int instrumentName, int imageResourceId, int audioResourceId, String summedHistory, @Nullable String externalLink) {
+    public Instrument(int instrumentName, int imageResourceId, int audioResourceId, @Nullable String summedHistory, @Nullable String externalLink) {
         iInstrumentName = instrumentName;
         iInstrumentId = audioResourceId;
         iInstrumentResId = imageResourceId;
