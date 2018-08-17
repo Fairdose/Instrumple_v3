@@ -26,8 +26,8 @@ public class Home extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(Home.this, KeyboardActivity.class);
-                startActivity(numbersIntent);
+                Intent keyboardsIntent = new Intent(Home.this, KeyboardActivity.class);
+                startActivity(keyboardsIntent);
             }
         });
 
@@ -35,8 +35,8 @@ public class Home extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent familyIntent = new Intent(Home.this, StringsActivity.class);
-                startActivity(familyIntent);
+                Intent stringsIntent = new Intent(Home.this, StringsActivity.class);
+                startActivity(stringsIntent);
             }
         });
 
@@ -44,8 +44,8 @@ public class Home extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent colorsIntent = new Intent(Home.this, PercussionActivity.class);
-                startActivity(colorsIntent);
+                Intent percussionIntent = new Intent(Home.this, PercussionActivity.class);
+                startActivity(percussionIntent);
             }
         });
     }
