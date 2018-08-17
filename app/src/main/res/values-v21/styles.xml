@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Instrumple" parent="Theme.AppCompat.NoActionBar">
+    <style name="Instrumple" parent="Theme.AppCompat">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="android:navigationBarColor">@color/primary_dark</item>

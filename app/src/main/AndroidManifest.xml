@@ -19,13 +19,33 @@
 
         <activity
             android:name=".KeyboardActivity"
-            android:label="@string/keyboard_text" />
+            android:label="@string/keyboard_text"
+            android:parentActivityName="com.example.st_peter_hq.instrumple.Home">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.st_peter_hq.instrumple.Home" />
+        </activity>
+
         <activity
             android:name=".StringsActivity"
-            android:label="@string/strings_text" />
+            android:label="@string/strings_text"
+            android:parentActivityName="com.example.st_peter_hq.instrumple.Home">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.st_peter_hq.instrumple.Home" />
+        </activity>
+
         <activity
             android:name=".PercussionActivity"
-            android:label="@string/percussion_text" />
+            android:label="@string/percussion_text"
+            android:parentActivityName="com.example.st_peter_hq.instrumple.Home">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.st_peter_hq.instrumple.Home" />
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
