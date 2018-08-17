@@ -18,8 +18,8 @@ public class Home extends AppCompatActivity {
         //Assign clickables to their respective layouts
 
         LinearLayout keyboard = (LinearLayout) findViewById(R.id.keyboards);
-        LinearLayout family = (LinearLayout) findViewById(R.id.strings);
-        LinearLayout colors = (LinearLayout) findViewById(R.id.percussion);
+        LinearLayout strings = (LinearLayout) findViewById(R.id.strings);
+        LinearLayout percussion = (LinearLayout) findViewById(R.id.percussion);
 
         //Define click listeners
         keyboard.setOnClickListener(new OnClickListener() {
@@ -31,7 +31,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        family.setOnClickListener(new OnClickListener() {
+        strings.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -40,7 +40,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        colors.setOnClickListener(new OnClickListener() {
+        percussion.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View view) {

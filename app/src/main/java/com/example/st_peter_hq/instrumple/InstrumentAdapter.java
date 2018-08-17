@@ -24,21 +24,16 @@ public class InstrumentAdapter extends ArrayAdapter<Instrument> {
             listItemView = LayoutInflater.from(getContext()).inflate( R.layout.list_item, parent, false );
         }
 
-        // Get the {@link Instrument} object located at this position in the list
         Instrument currentInstrument = getItem(position);
 
-        // Find the TextView in the list_item.xml layout with the ID miwok_text_view.
-        TextView miwokTextView = (TextView) listItemView.findViewById(R.id.item_text_view);
+        TextView iTextView = (TextView) listItemView.findViewById(R.id.item_text_view);
 
-        miwokTextView.setText(currentInstrument.getInstrumentName());
+        iTextView.setText(currentInstrument.getInstrumentName());
 
-        // Find the ImageView in the list_item.xml layout with the ID image.
         ImageView imageView = (ImageView) listItemView.findViewById(R.id.image);
 
         imageView.setImageResource(currentInstrument.getImageResourceId());
 
-        // Return the whole list item layout (containing 2 TextViews) so that it can be shown in
-        // the ListView.
         return listItemView;
     }
 }
