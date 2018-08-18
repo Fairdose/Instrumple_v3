@@ -5,4 +5,7 @@
     <dimen name="image_padding_or_margin">16dp</dimen>
     <dimen name="home_top_height">240dp</dimen>
     <dimen name="item_img_dim">32dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="seekbar_vertical_margin">8dp</dimen>
+    <dimen name="seekbar_horizontal_margin">12dp</dimen>
 </resources>

@@ -8,7 +8,7 @@ public class Instrument {
     
     private int iInstrumentName;
 
-    private int iInstrumentId;
+    private Sample iInstrumentId;
 
     private String iSummedHistory;
 
@@ -20,7 +20,7 @@ public class Instrument {
     
     //Create Instrument object
     
-    public Instrument(int instrumentName, int imageResourceId, int audioResourceId, @Nullable String summedHistory, @Nullable String externalLink) {
+    public Instrument(int instrumentName, int imageResourceId, Sample audioResourceId, @Nullable String summedHistory, @Nullable String externalLink) {
         iInstrumentName = instrumentName;
         iInstrumentId = audioResourceId;
         iInstrumentResId = imageResourceId;
@@ -41,5 +41,5 @@ public class Instrument {
 
     public boolean hasImage() { return iInstrumentResId != NO_IMAGE_PROVIDED; }
     
-    public int getAudioResourceId() { return iInstrumentId; }
+    public Sample getAudioResourceId() { return iInstrumentId; }
 }

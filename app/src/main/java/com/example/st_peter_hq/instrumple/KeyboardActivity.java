@@ -4,18 +4,26 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class KeyboardActivity extends AppCompatActivity {
+public class KeyboardActivity extends Home  {
 
     private MediaPlayer player;
 
     private AudioManager manager;
+
+    private LinearLayout playerBar;
+
+    private TextView nowPlaying;
+
+    private ImageView sampleImage;
 
     private AudioManager.OnAudioFocusChangeListener changeListener = new AudioManager.OnAudioFocusChangeListener() {
         @Override
@@ -47,13 +55,19 @@ public class KeyboardActivity extends AppCompatActivity {
         manager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         final ArrayList<Instrument> instruments = new ArrayList<Instrument>();
-        instruments.add(new Instrument(R.string.keyboard_1, R.drawable.keyboard, R.raw.sound, null, null));
-        instruments.add(new Instrument(R.string.keyboard_2, R.drawable.keyboard, R.raw.sound, null, null));
-        instruments.add(new Instrument(R.string.keyboard_3, R.drawable.keyboard, R.raw.sound, null, null));
+        instruments.add(new Instrument(R.string.keyboard_1, R.drawable.keyboard, new Sample("Sample 61", R.raw.sound, R.drawable.keyboard), null, null));
+        instruments.add(new Instrument(R.string.keyboard_2, R.drawable.keyboard, new Sample("Sample 29", R.raw.sound, R.drawable.keyboard), null, null));
+        instruments.add(new Instrument(R.string.keyboard_3, R.drawable.keyboard, new Sample("Sample 13", R.raw.sound, R.drawable.keyboard), null, null));
 
         InstrumentAdapter adapter = new InstrumentAdapter(this, instruments);
 
-        ListView listView = (ListView) findViewById(R.id.list);
+        ListView listView = findViewById(R.id.list);
+
+        playerBar = findViewById(R.id.player_bar);
+
+        nowPlaying = findViewById(R.id.now_playing);
+
+        sampleImage = findViewById(R.id.sample_image);
 
         listView.setAdapter(adapter);
 
@@ -69,7 +83,12 @@ public class KeyboardActivity extends AppCompatActivity {
                         AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
 
                 if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                    player = MediaPlayer.create(KeyboardActivity.this, instrument.getAudioResourceId());
+
+                    playerBar.setVisibility(View.VISIBLE);
+                    nowPlaying.setText(instrument.getAudioResourceId().getSample());
+                    sampleImage.setImageResource(instrument.getAudioResourceId().getSampleImage());
+
+                    player = MediaPlayer.create(KeyboardActivity.this, instrument.getAudioResourceId().getSampleLocation());
                     player.start();
                     player.setOnCompletionListener(completionListener);
                 }
@@ -86,6 +105,7 @@ public class KeyboardActivity extends AppCompatActivity {
     private void releaseMediaPlayer() {
 
         if (player != null) {
+            playerBar.setVisibility(View.GONE);
             player.release();
             player = null;
             manager.abandonAudioFocus(changeListener);

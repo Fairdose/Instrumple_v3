@@ -4,18 +4,26 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class StringsActivity extends AppCompatActivity {
+public class StringsActivity extends Home  {
 
     private MediaPlayer player;
 
     private AudioManager manager;
+
+    private LinearLayout playerBar;
+
+    private TextView nowPlaying;
+
+    private ImageView sampleImage;
 
     private AudioManager.OnAudioFocusChangeListener changeListener = new AudioManager.OnAudioFocusChangeListener() {
         @Override
@@ -47,13 +55,19 @@ public class StringsActivity extends AppCompatActivity {
         manager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         final ArrayList<Instrument> instruments = new ArrayList<Instrument>();
-        instruments.add(new Instrument(R.string.strings_1, R.drawable.violin, R.raw.sound, null, null));
-        instruments.add(new Instrument(R.string.strings_2, R.drawable.violin, R.raw.sound, null, null));
-        instruments.add(new Instrument(R.string.strings_3, R.drawable.violin, R.raw.sound, null, null));
+        instruments.add(new Instrument(R.string.strings_1, R.drawable.violin, new Sample("Sample s48", R.raw.sound, R.drawable.violin), null, null));
+        instruments.add(new Instrument(R.string.strings_2, R.drawable.violin, new Sample("Sample s76", R.raw.sound, R.drawable.violin), null, null));
+        instruments.add(new Instrument(R.string.strings_3, R.drawable.violin, new Sample("Sample s67", R.raw.sound, R.drawable.violin), null, null));
 
         InstrumentAdapter adapter = new InstrumentAdapter(this, instruments);
 
-        ListView listView = (ListView) findViewById(R.id.list);
+        ListView listView = findViewById(R.id.list);
+
+        playerBar = findViewById(R.id.player_bar);
+
+        nowPlaying = findViewById(R.id.now_playing);
+
+        sampleImage = findViewById(R.id.sample_image);
 
         listView.setAdapter(adapter);
 
@@ -69,7 +83,11 @@ public class StringsActivity extends AppCompatActivity {
                         AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
 
                 if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                    player = MediaPlayer.create(StringsActivity.this, instrument.getAudioResourceId());
+                    playerBar.setVisibility(View.VISIBLE);
+                    nowPlaying.setText(instrument.getAudioResourceId().getSample());
+                    sampleImage.setImageResource(instrument.getAudioResourceId().getSampleImage());
+
+                    player = MediaPlayer.create(StringsActivity.this, instrument.getAudioResourceId().getSampleLocation());
                     player.start();
                     player.setOnCompletionListener(completionListener);
                 }
@@ -86,6 +104,7 @@ public class StringsActivity extends AppCompatActivity {
     private void releaseMediaPlayer() {
 
         if (player != null) {
+            playerBar.setVisibility(View.GONE);
             player.release();
             player = null;
             manager.abandonAudioFocus(changeListener);

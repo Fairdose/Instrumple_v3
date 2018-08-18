@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,14 +9,35 @@
         android:id="@+id/activity_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/violin"
-        android:alpha="0.3"/>
+        android:alpha="0.3"
+        android:src="@drawable/violin" />
 
     <ListView
         android:id="@+id/list"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:drawSelectorOnTop="true"/>
+        android:drawSelectorOnTop="true"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:id="@+id/player_bar"
+        style="@style/player_bar">
+
+        <TextView
+            android:id="@+id/status_text"
+            android:text="@string/now_playing"
+            style="@style/status_text" />
+
+        <TextView
+            android:id="@+id/now_playing"
+            tool:text="@string/sound_placeholder"
+            style="@style/now_playing" />
+
+        <ImageView
+            android:id="@+id/sample_image"
+            android:text="@string/def_time"
+            style="@style/sample_image" />
+
+    </LinearLayout>
 
 </FrameLayout>
