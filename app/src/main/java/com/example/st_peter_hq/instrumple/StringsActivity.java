@@ -55,9 +55,9 @@ public class StringsActivity extends Home  {
         manager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         final ArrayList<Instrument> instruments = new ArrayList<Instrument>();
-        instruments.add(new Instrument(R.string.strings_1, R.drawable.violin, new Sample("Sample s48", R.raw.sound, R.drawable.violin), null, null));
-        instruments.add(new Instrument(R.string.strings_2, R.drawable.violin, new Sample("Sample s76", R.raw.sound, R.drawable.violin), null, null));
-        instruments.add(new Instrument(R.string.strings_3, R.drawable.violin, new Sample("Sample s67", R.raw.sound, R.drawable.violin), null, null));
+        instruments.add(new Instrument(R.string.strings_1, R.mipmap.string, new Sample("Sample s48", R.raw.sound, R.mipmap.string), null, null));
+        instruments.add(new Instrument(R.string.strings_2, R.mipmap.string, new Sample("Sample s76", R.raw.sound, R.mipmap.string), null, null));
+        instruments.add(new Instrument(R.string.strings_3, R.mipmap.string, new Sample("Sample s67", R.raw.sound, R.mipmap.string), null, null));
 
         InstrumentAdapter adapter = new InstrumentAdapter(this, instruments);
 

@@ -55,9 +55,9 @@ public class KeyboardActivity extends Home  {
         manager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         final ArrayList<Instrument> instruments = new ArrayList<Instrument>();
-        instruments.add(new Instrument(R.string.keyboard_1, R.drawable.keyboard, new Sample("Sample 61", R.raw.sound, R.drawable.keyboard), null, null));
-        instruments.add(new Instrument(R.string.keyboard_2, R.drawable.keyboard, new Sample("Sample 29", R.raw.sound, R.drawable.keyboard), null, null));
-        instruments.add(new Instrument(R.string.keyboard_3, R.drawable.keyboard, new Sample("Sample 13", R.raw.sound, R.drawable.keyboard), null, null));
+        instruments.add(new Instrument(R.string.keyboard_1, R.mipmap.keyboard, new Sample("Sample 61", R.raw.sound, R.mipmap.keyboard), null, null));
+        instruments.add(new Instrument(R.string.keyboard_2, R.mipmap.keyboard, new Sample("Sample 29", R.raw.sound, R.mipmap.keyboard), null, null));
+        instruments.add(new Instrument(R.string.keyboard_3, R.mipmap.keyboard, new Sample("Sample 13", R.raw.sound, R.mipmap.keyboard), null, null));
 
         InstrumentAdapter adapter = new InstrumentAdapter(this, instruments);
 

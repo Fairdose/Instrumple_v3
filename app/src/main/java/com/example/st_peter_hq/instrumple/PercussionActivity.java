@@ -55,9 +55,9 @@ public class PercussionActivity extends Home {
         manager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         final ArrayList<Instrument> instruments = new ArrayList<Instrument>();
-        instruments.add(new Instrument(R.string.percussion_1, R.drawable.percussion, new Sample("Sample p71", R.raw.sound, R.drawable.percussion), null, null));
-        instruments.add(new Instrument(R.string.percussion_2, R.drawable.percussion, new Sample("Sample p265", R.raw.sound, R.drawable.percussion), null, null));
-        instruments.add(new Instrument(R.string.percussion_3, R.drawable.percussion, new Sample("Sample p43", R.raw.sound, R.drawable.percussion), null, null));
+        instruments.add(new Instrument(R.string.percussion_1, R.mipmap.percussion, new Sample("Sample p71", R.raw.sound, R.mipmap.percussion), null, null));
+        instruments.add(new Instrument(R.string.percussion_2, R.mipmap.percussion, new Sample("Sample p265", R.raw.sound, R.mipmap.percussion), null, null));
+        instruments.add(new Instrument(R.string.percussion_3, R.mipmap.percussion, new Sample("Sample p43", R.raw.sound, R.mipmap.percussion), null, null));
 
         InstrumentAdapter adapter = new InstrumentAdapter(this, instruments);
 
